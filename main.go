@@ -36,6 +36,8 @@ func Summarize(v interface{}) interface{} {
 
 	L:
 		for _, sv := range vv {
+			sv = Summarize(sv)
+
 			for ei, ev := range ret {
 				u, ok := Unify(ev, sv)
 				if ok {
